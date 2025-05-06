@@ -28,12 +28,17 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'claim.complete': 'Claimed',
     'claim.loading': 'Loading...',
     'airdrop.title': 'Tutu Token Airdrop Rules',
-    'airdrop.description': 'Connect your wallet to check if you are eligible for the Tutu token airdrop.',
     'airdrop.requirements': 'Eligibility Requirements:',
     'airdrop.requirement1': 'All addresses holding LXP on the Linea blockchain before November 20, 2024, 15:11 (UTC)',
     'airdrop.requirement2': 'Based on the amount of LXP in your wallet at that time',
     'airdrop.requirement3': 'For every 1 LXP you hold, you can claim 1 Tutu',
     'airdrop.requirement4': 'No limit to the amount you can mint based on your LXP balance',
+    'airdrop.requirement5': 'Tutu tokens can be claimed on Linea chain.',
+    'airdrop.connect_wallet_check': 'Please connect your wallet to check airdrop eligibility',
+    'airdrop.not_eligible': 'Sorry, you are not eligible for the airdrop',
+    'airdrop.already_claimed': 'You have successfully claimed your Tutu tokens',
+    'airdrop.can_claim': 'Congratulations! You can claim Tutu tokens',
+    'airdrop.view_transaction': 'View Transaction',
     
     // TokenIntro相关
     'token.intro.title': 'About Tutu Token',
@@ -69,17 +74,17 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'tokenomics.no_vc_desc': 'No VCs or investment institutions were introduced to ensure the project is fully controlled by community members',
     'tokenomics.no_founders_desc': 'The founding team and operations team are not allocated shares from the fund pool, ensuring fairness',
     'tokenomics.no_inflation_desc': 'The total supply is permanently fixed at 2,621,511,258 tokens, and there will never be any form of additional issuance',
-    'token.intro.item1.title': 'Tutu’s Origin',
+    'token.intro.item1.title': 'Tutu Origin',
     'token.intro.item1.subtitle': 'A cute community-driven response',
     'token.intro.item1.content': 'Only LXP holders are eligible to mint Tutu proportionally.\n\nDue to repeatedly delayed official TGE (Token Generation Event), the community decided to take the initiative and respond with Tutu to the long-awaited enthusiasm.\n\nTutu is a reward for active participants and a tribute to the Web3 spirit.\n\nMinting rule: 1 LXP = 1 Tutu',
     
-    'token.intro.item2.title': 'Tutu’s Value',
+    'token.intro.item2.title': 'Tutu Value',
     'token.intro.item2.subtitle': 'Badge of honor, cannot be replicated',
-    'token.intro.item2.content': 'Tutu is a pure Meme token.\n\nIt doesn’t promise returns or come with airdrop schemes, its existence is a "symbol of honor".\n\n🏆 Holding is an honor: representing you as a true early supporter on Linea chain.\n\n💯 Fair distribution: no reserves, no presale, no team allocation.\n\n🔒 Capped supply: 2,621,511,258 tokens, never to be increased.',
+    'token.intro.item2.content': 'Tutu is a pure Meme token.\n\nIt does not promise returns or come with airdrop schemes, its existence is a "symbol of honor".\n\n🏆 Holding is an honor: representing you as a true early supporter on Linea chain.\n\n💯 Fair distribution: no reserves, no presale, no team allocation.\n\n🔒 Capped supply: 2,621,511,258 tokens, never to be increased.',
     
     'token.intro.item3.title': 'Community-Driven',
     'token.intro.item3.subtitle': 'A DAO experiment for every rabbit',
-    'token.intro.item3.content': 'Tutu has no boss, only rabbit friends.\n\nThe project has no foundation or core team; every Tutu holder is the project’s owner.\n\n📢 All proposals and upgrades will be decided through community voting.\n\n🧠 The community can propose development plans, cooperation suggestions, and ecosystem expansion directions.\n\n🧩 Tutu’s future is determined by everyone together, not by a few.'
+    'token.intro.item3.content': 'Tutu has no boss, only rabbit friends.\n\nThe project has no foundation or core team; every Tutu holder is the project owner.\n\n📢 All proposals and upgrades will be decided through community voting.\n\n🧠 The community can propose development plans, cooperation suggestions, and ecosystem expansion directions.\n\n🧩 Tutu future is determined by everyone together, not by a few.'
   },
   'zh-CN': {
     // 通用导航
@@ -108,12 +113,17 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'claim.complete': '已领取',
     'claim.loading': '加载中...',
     'airdrop.title': 'Tutu 代币空投规则',
-    'airdrop.description': '连接您的钱包查看您是否有资格获得Tutu代币空投。',
     'airdrop.requirements': '领取资格要求：',
     'airdrop.requirement1': '所有在 2024年11月20日 15:11 (UTC) 前，在 Linea 区块链上持有 LXP 的地址。',
     'airdrop.requirement2': '可领取Tutu的数量基于快照时钱包中所持有的 LXP 数量。',
     'airdrop.requirement3': '每持有 1 LXP，可领取 1 Tutu。',
     'airdrop.requirement4': '铸造上限为快照时您的 LXP 余额。',
+    'airdrop.requirement5': 'Tutu代币于Linea链上领取。',
+    'airdrop.connect_wallet_check': '请连接您的钱包查询空投资格',
+    'airdrop.not_eligible': '很遗憾，您不符合空投资格',
+    'airdrop.already_claimed': '您已成功领取空投代币',
+    'airdrop.can_claim': '恭喜您，您可以领取Tutu代币',
+    'airdrop.view_transaction': '查看交易详情',
     
     // TokenIntro相关
     'token.intro.title': 'Tutu 代币介绍',
@@ -187,12 +197,17 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'claim.complete': '수령됨',
     'claim.loading': '로딩 중...',
     'airdrop.title': 'Tutu 토큰 에어드롭 규칙',
-    'airdrop.description': 'Tutu 토큰 에어드롭을 받을 자격이 있는지 확인하려면 지갑을 연결하세요.',
     'airdrop.requirements': '자격 요구 사항:',
     'airdrop.requirement1': '2024년 11월 20일 15:11 (UTC) 이전에 Linea 블록체인에서 LXP 를 보유한 모든 주소',
     'airdrop.requirement2': '해당 시점에 지갑에 있는 LXP 수량을 기준으로 함',
     'airdrop.requirement3': '보유한 LXP 1개당 1개의 Tutu를 수령할 수 있음',
     'airdrop.requirement4': '발행 한도는 스냅샷 시점의 LXP 잔액입니다.',
+    'airdrop.requirement5': 'Tutu 토큰은 Linea 체인에서 수령할 수 있습니다.',
+    'airdrop.connect_wallet_check': '에어드롭 자격을 확인하려면 지갑을 연결하세요',
+    'airdrop.not_eligible': '죄송합니다. 에어드롭 자격이 없습니다',
+    'airdrop.already_claimed': 'Tutu 토큰을 성공적으로 수령했습니다',
+    'airdrop.can_claim': '축하합니다! Tutu 토큰을 수령할 수 있습니다',
+    'airdrop.view_transaction': '거래 보기',
     
     // TokenIntro相关
     'token.intro.title': 'Tutu 토큰 소개',

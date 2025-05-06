@@ -3,19 +3,22 @@
 import { useCallback } from 'react';
 import ConnectorBtn from './ConnectorBtn';
 import { useWallet } from '@/context/WalletContext';
+import { truncateAddress } from '@/utils/web3Utils';
 
 interface AddressDisplayProps {
   onConnect?: () => void;
   onDisconnect?: () => void;
   name?: string;
   className?: string;
+  hideAfterConnect?: boolean;
 }
 
 export default function AddressDisplay({ 
   onConnect, 
   onDisconnect, 
   name = 'addressDisplay',
-  className = ''
+  className = '',
+  hideAfterConnect = false
 }: AddressDisplayProps) {
   // 使用全局钱包上下文
   const { account, isConnected, refreshKey } = useWallet();
@@ -43,12 +46,17 @@ export default function AddressDisplay({
     }
   }, [onConnect, logInfo]);
 
+  // 如果用户选择连接后隐藏且已连接，则返回null
+  if (hideAfterConnect && isConnected && account) {
+    return null;
+  }
+
   // 如果有账户信息，显示地址；否则显示连接按钮
   return (
     <div className={`address-display-wrapper ${className}`}>
       {isConnected && account && account.address ? (
         <div className="text-center py-2">
-          <span className="block text-2xl font-mono bg-[#1c2026] text-white px-4 py-2 rounded-lg break-all">
+          <span className="block text-base md:text-lg font-mono bg-[#1c2026] text-white px-3 py-1.5 rounded-lg break-all">
             {account.address}
           </span>
         </div>

@@ -486,32 +486,32 @@ export default function ConnectorBtn({
       <ConfigProvider theme={darkTheme}>
         <QueryClientProvider client={queryClient}>
           <ErrorBoundary>
-            <EthWeb3jsConfigProvider
-              locale={getLocale()}
-              eip6963={{
-                autoAddInjectedWallets: true,
-              }} 
-              chains={[linea]}
-              wallets={[MetaMask(), OkxWallet(), TokenPocket()]}
+          <EthWeb3jsConfigProvider
+            locale={getLocale()}
+            eip6963={{
+              autoAddInjectedWallets: true,
+            }} 
+            chains={[linea]}
+            wallets={[MetaMask(), OkxWallet(), TokenPocket()]}
+          >
+            <Connector
+              modalProps={{
+                emptyProps: {
+                  description: language === 'zh-CN' ? '未检测到钱包' : 'No wallet detected'
+                },
+              }}
+              onConnected={handleConnected}
+              onDisconnected={handleDisconnected}
+              account={accountInfo}
+              disconnect={manualDisconnect}
             >
-              <Connector
-                modalProps={{
-                  emptyProps: {
-                    description: language === 'zh-CN' ? '未检测到钱包' : 'No wallet detected'
-                  },
-                }}
-                onConnected={handleConnected}
-                onDisconnected={handleDisconnected}
-                account={accountInfo}
-                disconnect={manualDisconnect}
-              >
-                <ConnectButton 
-                  size="middle"
-                  className="custom-connect-btn"
-                  block={false}
-                />
-              </Connector>
-            </EthWeb3jsConfigProvider>
+              <ConnectButton 
+                size="middle"
+                className="custom-connect-btn"
+                block={false}
+              />
+            </Connector>
+          </EthWeb3jsConfigProvider>
           </ErrorBoundary>
         </QueryClientProvider>
       </ConfigProvider>
