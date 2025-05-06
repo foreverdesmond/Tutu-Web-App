@@ -22,7 +22,6 @@ export default function Airdrop() {
         <Titlebar />
         <div className="flex-grow">
           <div className="mt-0 md:mt-0">
-            <AirdropInfo />
             <EligibilityDisplay />
             <div className="w-full max-w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-16">
               <div className="max-w-3xl mx-auto text-center">
@@ -35,6 +34,7 @@ export default function Airdrop() {
                 />
               </div>
             </div>
+            <AirdropInfo />
           </div>
         </div>
         <Footer />
