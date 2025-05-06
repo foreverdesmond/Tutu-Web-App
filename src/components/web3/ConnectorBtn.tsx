@@ -204,10 +204,16 @@ export default function ConnectorBtn({
         try {
           // 检查是否有以太坊提供者
           if (window.ethereum) {
-            // 请求账户
-            const accounts = await window.ethereum.request({ method: 'eth_accounts' });
-            
-            addLog('accounts');
+            let accounts;
+            try {
+              // 尝试使用eth_requestAccounts主动请求连接，这在钱包已经授权的情况下不会显示弹窗
+              accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+              addLog('使用eth_requestAccounts成功获取账户');
+            } catch (requestError) {
+              // 如果requestAccounts失败，回退到eth_accounts检查
+              addLog('eth_requestAccounts失败，回退到eth_accounts');
+              accounts = await window.ethereum.request({ method: 'eth_accounts' });
+            }
             
             if (accounts && accounts.length > 0) {
               addLog('验证成功：钱包已连接');
@@ -380,7 +386,7 @@ export default function ConnectorBtn({
           } catch (error: any) {
             addLog(`解析本地存储账户信息出错: ${error}`);
             setAccountInfo(undefined);
-    }
+          }
         }
       }
     }, 300);
