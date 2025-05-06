@@ -6,6 +6,8 @@ import { useTokenomics } from '@/hooks/useTokenomics';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 import { useTranslation } from '@/hooks/useTranslation';
+import { CopyOutlined } from '@ant-design/icons';
+import { TUTU_CONTRACT_ADDRESS } from '@/constants/contracts';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -155,6 +157,45 @@ export default function Tokenomics() {
       
       {/* 代币经济学详情部分 */}
       <div className="bg-[#1f2228] p-6 md:p-8 rounded-xl shadow-xl w-full max-w-[1920px] mx-auto">
+        {/* 合约地址信息 */}
+        <div className="mb-8 bg-[#2a2e35]/50 p-5 md:p-6 rounded-xl border border-[#ffaac3]/10">
+          <h3 className="text-xl md:text-2xl font-bold text-[#ffaac3] mb-6 text-center">
+            {t('tokenomics.contract_info')}
+          </h3>
+          <div className="flex flex-col items-center text-center">
+            <div className="flex items-center justify-center flex-wrap gap-2 mb-4">
+              <a 
+                href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER || 'https://explorer.linea.build'}/address/${TUTU_CONTRACT_ADDRESS}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-[#ffaac3] text-xl md:text-2xl lg:text-3xl font-medium break-all hover:underline transition-colors"
+              >
+                {TUTU_CONTRACT_ADDRESS}
+              </a>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(TUTU_CONTRACT_ADDRESS || '');
+                  // 可以添加复制成功提示
+                }}
+                className="text-[#ffaac3] hover:text-white p-1.5 rounded-full transition-colors text-xl"
+                title={t('wallet.copy')}
+              >
+                <CopyOutlined />
+              </button>
+            </div>
+            <div className="flex items-center justify-center gap-4">
+              <a 
+                href={`${process.env.NEXT_PUBLIC_BLOCK_EXPLORER || 'https://explorer.linea.build'}/address/${TUTU_CONTRACT_ADDRESS}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="bg-[#2a2e35] hover:bg-[#323740] text-white text-xs px-3 py-1.5 rounded-full transition-colors"
+              >
+                {t('wallet.explorer')}
+              </a>
+            </div>
+          </div>
+        </div>
+        
         {/* 代币基本信息 */}
         <div className="mb-8 bg-[#2a2e35]/50 p-5 md:p-6 rounded-xl border border-[#ffaac3]/10">
           <h3 className="text-xl md:text-2xl font-bold text-[#ffaac3] mb-6 text-center">
