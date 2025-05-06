@@ -63,6 +63,14 @@ export function useAirdrop() {
       setError(null);
 
       try {
+        // 检查合约地址是否有效
+        console.log('使用的合约地址:', TUTU_CONTRACT_ADDRESS);
+        
+        if (!TUTU_CONTRACT_ADDRESS || TUTU_CONTRACT_ADDRESS === '0x0000000000000000000000000000000000000000') {
+          console.error('合约地址未配置或无效:', TUTU_CONTRACT_ADDRESS);
+          throw new Error('合约地址未配置，请检查环境变量');
+        }
+
         // 初始化 Web3
         const web3 = new Web3(window.ethereum);
         
