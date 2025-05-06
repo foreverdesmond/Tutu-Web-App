@@ -1,4 +1,4 @@
-export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || '0x0000000000000000000000000000000000000000';
+export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS;
 
 export const TUTU_ABI = [
   // 简化的ABI
@@ -19,7 +19,7 @@ export const TUTU_ABI = [
 ];
 
 // Tutu合约地址
-export const TUTU_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TUTU_CONTRACT_ADDRESS || '0x81957f4ac4fae880b164740d39208a22afd7a398';
+export const TUTU_CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_TUTU_CONTRACT_ADDRESS;
 
 // Tutu合约 ABI
 export const TUTU_CONTRACT_ABI = [
@@ -59,6 +59,19 @@ export const TUTU_CONTRACT_ABI = [
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "claim",
+    "outputs": [],
+    "stateMutability": "payable",
     "type": "function"
   }
 ] as const; 
