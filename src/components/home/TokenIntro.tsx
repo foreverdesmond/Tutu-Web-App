@@ -18,7 +18,7 @@ const IntroItem: React.FC<IntroItemProps> = ({ bgImage, titleKey, subtitleKey, c
 
   return (
     <div 
-      className="relative rounded-lg overflow-hidden shadow-xl aspect-[4/3] transition-all duration-300 hover:shadow-2xl h-full"
+      className="relative rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:shadow-2xl h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -76,27 +76,33 @@ export default function TokenIntro() {
         {t('token.intro.title')}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 xl:gap-12 w-full max-w-[1920px] mx-auto">
-        <IntroItem 
-          bgImage="/images/img/1.jpeg" 
-          titleKey="token.intro.item1.title"
-          subtitleKey="token.intro.item1.subtitle"
-          contentKey="token.intro.item1.content"
-          index={0}
-        />
-        <IntroItem 
-          bgImage="/images/img/2.jpeg" 
-          titleKey="token.intro.item2.title"
-          subtitleKey="token.intro.item2.subtitle"
-          contentKey="token.intro.item2.content"
-          index={1}
-        />
-        <IntroItem 
-          bgImage="/images/img/3.jpeg" 
-          titleKey="token.intro.item3.title"
-          subtitleKey="token.intro.item3.subtitle"
-          contentKey="token.intro.item3.content"
-          index={2}
-        />
+        <div className="h-[450px] md:h-[500px] lg:h-[550px]">
+          <IntroItem 
+            bgImage="/images/img/1.jpeg" 
+            titleKey="token.intro.item1.title"
+            subtitleKey="token.intro.item1.subtitle"
+            contentKey="token.intro.item1.content"
+            index={0}
+          />
+        </div>
+        <div className="h-[450px] md:h-[500px] lg:h-[550px]">
+          <IntroItem 
+            bgImage="/images/img/2.jpeg" 
+            titleKey="token.intro.item2.title"
+            subtitleKey="token.intro.item2.subtitle"
+            contentKey="token.intro.item2.content"
+            index={1}
+          />
+        </div>
+        <div className="h-[450px] md:h-[500px] lg:h-[550px]">
+          <IntroItem 
+            bgImage="/images/img/3.jpeg" 
+            titleKey="token.intro.item3.title"
+            subtitleKey="token.intro.item3.subtitle"
+            contentKey="token.intro.item3.content"
+            index={2}
+          />
+        </div>
       </div>
     </div>
   );

@@ -136,13 +136,13 @@ export default function Titlebar() {
       <nav className="hidden lg:flex lg:flex-row lg:ml-12 xl:ml-16">
         <Link 
           href={ROUTES.HOME} 
-          className="mx-3 lg:mx-4 xl:mx-6 text-lg lg:text-xl xl:text-2xl hover:text-[#ffaac3] font-medium transition-colors duration-200"
+          className="mx-5 lg:mx-6 xl:mx-8 text-xl lg:text-2xl xl:text-3xl hover:text-[#ffaac3] font-medium transition-colors duration-200"
         >
           {t('common.home')}
         </Link>
         <Link 
           href={ROUTES.AIRDROP} 
-          className="mx-3 lg:mx-4 xl:mx-6 text-lg lg:text-xl xl:text-2xl hover:text-[#ffaac3] font-medium transition-colors duration-200"
+          className="mx-5 lg:mx-6 xl:mx-8 text-xl lg:text-2xl xl:text-3xl hover:text-[#ffaac3] font-medium transition-colors duration-200"
         >
           {t('common.airdrop')}
         </Link>

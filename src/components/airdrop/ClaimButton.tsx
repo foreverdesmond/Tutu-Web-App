@@ -77,7 +77,7 @@ export default function ClaimButton() {
           <div>
             <button
               disabled
-              className="w-[180px] h-[45px] md:w-[200px] md:h-[50px] bg-[#c0c0c0] text-white rounded text-base md:text-xl font-medium"
+              className="w-[180px] h-[45px] md:w-[200px] md:h-[50px] bg-[#c0c0c0] text-white rounded-md text-base md:text-xl font-medium"
             >
               {t('claim.complete')}
             </button>
@@ -107,7 +107,7 @@ export default function ClaimButton() {
         <button
           onClick={handleClaim}
           disabled={isClaiming}
-          className="w-[180px] h-[45px] md:w-[200px] md:h-[50px] bg-[#ffaac3] text-base md:text-xl text-white rounded font-medium hover:bg-[#ff8aa9] disabled:bg-[#c0c0c0] transition-colors"
+          className="w-[180px] h-[45px] md:w-[200px] md:h-[50px] bg-[#ffaac3] text-base md:text-xl text-white rounded-md font-medium hover:bg-[#ff8aa9] disabled:bg-[#c0c0c0] transition-colors"
         >
           {isClaiming ? (
             <span className="flex items-center justify-center">

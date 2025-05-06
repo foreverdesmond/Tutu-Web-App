@@ -59,8 +59,8 @@ export default function LanguageSwitch() {
           overlayClassName="custom-dropdown"
         >
           <a onClick={(e) => e.preventDefault()}>
-            <Space className="flex items-center text-lg md:text-xl lg:text-2xl text-white hover:text-[#ffaac3] transition-colors duration-200 cursor-pointer">
-              <GlobalOutlined className="text-xl md:text-2xl lg:text-3xl" />
+            <Space className="flex items-center text-base md:text-lg lg:text-xl text-white hover:text-[#ffaac3] transition-colors duration-200 cursor-pointer">
+              <GlobalOutlined className="text-lg md:text-xl lg:text-2xl" />
               <span className="hidden md:inline">{getCurrentLanguageLabel()}</span>
             </Space>
           </a>
