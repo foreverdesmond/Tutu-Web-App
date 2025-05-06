@@ -84,7 +84,7 @@ export default function EligibilityDisplay() {
       return (
         <div className="text-center py-6 md:py-8">
           <p className="text-xl md:text-2xl text-white mb-6 md:mb-8">{t('airdrop.already_claimed')}</p>
-          <p className="text-6xl md:text-8xl lg:text-10xl font-bold text-[#ffaac3] mb-2 md:mb-3">{formatAmount(airdrop.claimedAmount)} Tutu</p>
+          <p className="text-6xl md:text-8xl lg:text-10xl font-bold text-[#ffaac3] mb-2 md:mb-3">{airdrop.claimedAmountInteger} Tutu</p>
         </div>
       );
 
@@ -92,7 +92,7 @@ export default function EligibilityDisplay() {
       return (
         <div className="text-center py-6 md:py-8">
           <p className="text-xl md:text-2xl text-white mb-6 md:mb-8">{t('airdrop.can_claim')}</p>
-          <p className="text-6xl md:text-8xl lg:text-10xl font-bold text-[#ffaac3] mb-2 md:mb-3 animate-pulse">{formatAmount(airdrop.amount)} Tutu</p>
+          <p className="text-6xl md:text-8xl lg:text-10xl font-bold text-[#ffaac3] mb-2 md:mb-3 animate-pulse">{airdrop.amountInteger} Tutu</p>
           <div className="mt-6 md:mt-8">
             <ClaimButton />
           </div>

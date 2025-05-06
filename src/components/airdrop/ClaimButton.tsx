@@ -3,13 +3,17 @@
 import React, { useState } from 'react';
 import { useAirdrop } from '@/hooks/useAirdrop';
 import { useTranslation } from '@/hooks/useTranslation';
-import { formatAmount } from '@/utils/web3Utils';
+import Web3 from 'web3';
+import { TUTU_CONTRACT_ADDRESS, TUTU_CONTRACT_ABI } from '@/constants/contracts';
+import { useWallet } from '@/context/WalletContext';
 
 export default function ClaimButton() {
-  const { airdrop, isLoading, error } = useAirdrop();
+  const { airdrop } = useAirdrop();
   const { t } = useTranslation();
+  const { account } = useWallet();
   const [isClaiming, setIsClaiming] = useState(false);
   const [txHash, setTxHash] = useState<string | null>(null);
+  const [claimError, setClaimError] = useState<string | null>(null);
 
   const blockExplorer = process.env.NEXT_PUBLIC_BLOCK_EXPLORER || 'https://explorer.linea.build';
 
@@ -18,19 +22,48 @@ export default function ClaimButton() {
     return null;
   }
 
-  // 模拟领取操作
+  // 实际领取操作
   const handleClaim = async () => {
+    if (!account?.address) {
+      setClaimError(t('common.wallet_not_connected'));
+      return;
+    }
+
     setIsClaiming(true);
+    setClaimError(null);
+
     try {
-      // 这里应该调用实际的合约领取方法
-      // 暂时使用延时模拟
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // 初始化 Web3
+      const web3 = new Web3(window.ethereum);
       
-      // 模拟交易哈希
-      const mockTxHash = '0x' + Math.random().toString(16).substring(2, 62);
-      setTxHash(mockTxHash);
-    } catch (err) {
+      // 创建合约实例
+      const contract = new web3.eth.Contract(
+        TUTU_CONTRACT_ABI,
+        TUTU_CONTRACT_ADDRESS
+      );
+
+      // 设置ETH手续费
+      const feeAmount = web3.utils.toWei('0.0001', 'ether');
+
+      console.log('调用合约claim方法:', {
+        amount: airdrop.amountInteger,
+        feeAmount: feeAmount
+      });
+
+      // 调用合约的claim方法，传入正确的整数值
+      const tx = await contract.methods.claim(airdrop.amountInteger).send({
+        from: account.address,
+        value: feeAmount // 发送0.0001 ETH作为手续费
+      });
+
+      // 保存交易哈希
+      if (tx.transactionHash) {
+        setTxHash(tx.transactionHash);
+        console.log('领取成功，交易哈希:', tx.transactionHash);
+      }
+    } catch (err: any) {
       console.error('领取失败:', err);
+      setClaimError(err.message || t('common.unknown_error'));
     } finally {
       setIsClaiming(false);
     }
@@ -44,7 +77,7 @@ export default function ClaimButton() {
           <div>
             <button
               disabled
-              className="px-4 md:px-6 py-1.5 md:py-2 bg-[#c0c0c0] text-white rounded text-sm md:text-base font-medium"
+              className="w-[180px] h-[45px] md:w-[200px] md:h-[50px] bg-[#c0c0c0] text-white rounded text-base md:text-xl font-medium"
             >
               {t('claim.complete')}
             </button>
@@ -68,21 +101,24 @@ export default function ClaimButton() {
   return (
     <div className="w-full max-w-full mx-auto px-4 md:px-6 lg:px-10 xl:px-16">
       <div className="max-w-3xl mx-auto text-center py-3 md:py-4">
+        {claimError && (
+          <div className="text-red-500 text-sm mb-2">{claimError}</div>
+        )}
         <button
           onClick={handleClaim}
           disabled={isClaiming}
-          className="px-4 md:px-6 py-1.5 md:py-2 bg-[#ffaac3] text-sm md:text-base text-white rounded font-medium hover:bg-[#ff8aa9] disabled:bg-[#c0c0c0] transition-colors"
+          className="w-[180px] h-[45px] md:w-[200px] md:h-[50px] bg-[#ffaac3] text-base md:text-xl text-white rounded font-medium hover:bg-[#ff8aa9] disabled:bg-[#c0c0c0] transition-colors"
         >
           {isClaiming ? (
             <span className="flex items-center justify-center">
-              <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
               {t('claim.loading')}
             </span>
           ) : (
-            `${t('claim.action')} ${formatAmount(airdrop.amount)} Tutu`
+            t('claim.action')
           )}
         </button>
       </div>

@@ -1,15 +1,36 @@
 import { useState, useEffect } from 'react';
 import { useWallet } from '@/context/WalletContext';
 import { TUTU_CONTRACT_ADDRESS, TUTU_CONTRACT_ABI } from '@/constants/contracts';
-import { Contract } from 'web3-eth-contract';
 import Web3 from 'web3';
 
 export interface AirdropInfo {
   isEligible: boolean;
   amount: string;
   claimedAmount: string;
+  amountInteger: string;
+  claimedAmountInteger: string;
   status: 'not_eligible' | 'can_claim' | 'claimed';
 }
+
+// 辅助函数：从合约返回的Wei单位数值中提取实际数量
+const extractTokenAmount = (amountInWei: string): string => {
+  try {
+    // 将大数转为字符串处理
+    const amountStr = amountInWei.toString();
+    
+    // Tutu代币有18位小数，移除这些小数位
+    if (amountStr.length > 18) {
+      // 从右边移除18个0（如果有的话）
+      return amountStr.slice(0, -18);
+    }
+    
+    // 如果数值小于10^18，则返回0
+    return '0';
+  } catch (error) {
+    console.error('解析代币数量出错:', error);
+    return '0';
+  }
+};
 
 export function useAirdrop() {
   const { account } = useWallet();
@@ -17,6 +38,8 @@ export function useAirdrop() {
     isEligible: false,
     amount: '0',
     claimedAmount: '0',
+    amountInteger: '0',
+    claimedAmountInteger: '0',
     status: 'not_eligible'
   });
   const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +52,8 @@ export function useAirdrop() {
           isEligible: false,
           amount: '0',
           claimedAmount: '0',
+          amountInteger: '0',
+          claimedAmountInteger: '0',
           status: 'not_eligible'
         });
         return;
@@ -57,6 +82,10 @@ export function useAirdrop() {
         const claimableBigInt = BigInt(claimableAmount);
         const claimedBigInt = BigInt(claimedAmount);
 
+        // 处理数据，提取整数部分
+        const amountInteger = extractTokenAmount(claimableAmount.toString());
+        const claimedAmountInteger = extractTokenAmount(claimedAmount.toString());
+
         // 确定空投状态
         let status: AirdropInfo['status'];
         let isEligible = false;
@@ -84,6 +113,8 @@ export function useAirdrop() {
           isEligible,
           amount: claimableAmount.toString(),
           claimedAmount: claimedAmount.toString(),
+          amountInteger,
+          claimedAmountInteger,
           status
         });
       } catch (err: any) {
@@ -93,6 +124,8 @@ export function useAirdrop() {
           isEligible: false,
           amount: '0',
           claimedAmount: '0',
+          amountInteger: '0',
+          claimedAmountInteger: '0',
           status: 'not_eligible'
         });
       } finally {
