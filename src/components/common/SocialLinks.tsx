@@ -5,9 +5,13 @@ import { FaTwitter, FaTelegram, FaDiscord, FaMedium } from 'react-icons/fa';
 
 interface SocialLinksProps {
   variant?: 'footer' | 'topbar';
+  showMedium?: boolean;
 }
 
-const SocialLinks: React.FC<SocialLinksProps> = ({ variant = 'topbar' }) => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ 
+  variant = 'topbar',
+  showMedium = false // 默认不显示Medium
+}) => {
   // 社交媒体链接从环境变量中获取
   const socialLinks = {
     twitter: process.env.NEXT_PUBLIC_TWITTER_URL,
@@ -47,15 +51,17 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ variant = 'topbar' }) => {
         >
           <FaDiscord size={24} />
         </a>
-        <a
-          href={socialLinks.medium}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#ffaac3] transition-colors duration-200"
-          aria-label="Medium"
-        >
-          <FaMedium size={24} />
-        </a>
+        {showMedium && (
+          <a
+            href={socialLinks.medium}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#ffaac3] transition-colors duration-200"
+            aria-label="Medium"
+          >
+            <FaMedium size={24} />
+          </a>
+        )}
       </div>
     );
   };
@@ -97,17 +103,19 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ variant = 'topbar' }) => {
             <FaDiscord size={24} className="md:w-6 md:h-6 lg:w-7 lg:h-7" />
           </div>
         </a>
-        <a
-          href={socialLinks.medium}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#ffaac3] transition-colors duration-200"
-          aria-label="Medium"
-        >
-          <div className="flex items-center">
-            <FaMedium size={24} className="md:w-6 md:h-6 lg:w-7 lg:h-7" />
-          </div>
-        </a>
+        {showMedium && (
+          <a
+            href={socialLinks.medium}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#ffaac3] transition-colors duration-200"
+            aria-label="Medium"
+          >
+            <div className="flex items-center">
+              <FaMedium size={24} className="md:w-6 md:h-6 lg:w-7 lg:h-7" />
+            </div>
+          </a>
+        )}
       </div>
     );
   };

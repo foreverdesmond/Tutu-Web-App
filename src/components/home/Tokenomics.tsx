@@ -251,37 +251,51 @@ export default function Tokenomics() {
         </div>
         
         {/* 零预售部分 */}
-        <div className="mb-4">
-          <h4 className="text-lg md:text-xl font-bold text-[#ffaac3] mb-5 text-center">{t('tokenomics.zero_presale')}</h4>
-          <p className="text-sm md:text-base text-white mb-8 text-left max-w-5xl mx-auto lg:px-4">
+        <div className="mb-8 bg-[#2a2e35]/50 p-5 md:p-6 rounded-xl border border-[#ffaac3]/10">
+          <h3 className="text-xl md:text-2xl font-bold text-[#ffaac3] mb-6 text-center">
+            {t('tokenomics.zero_presale')}
+          </h3>
+          <p className="text-sm md:text-base text-white mb-6 text-center max-w-5xl mx-auto">
             {t('tokenomics.description.content')}
           </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <div className="bg-[#2a2e35] p-5 rounded-lg border-l-4 border-red-500 hover:bg-[#323740] transition-colors duration-300">
-            <p className="text-white text-sm md:text-base font-medium">
-              <span className="text-red-500 font-bold mr-2">🛑</span> {t('tokenomics.no_presale')}
-            </p>
-            <p className="text-gray-400 text-xs md:text-sm mt-2 pl-7">{t('tokenomics.no_presale_desc')}</p>
-          </div>
-          <div className="bg-[#2a2e35] p-5 rounded-lg border-l-4 border-red-500 hover:bg-[#323740] transition-colors duration-300">
-            <p className="text-white text-sm md:text-base font-medium">
-              <span className="text-red-500 font-bold mr-2">🛑</span> {t('tokenomics.no_vc')}
-            </p>
-            <p className="text-gray-400 text-xs md:text-sm mt-2 pl-7">{t('tokenomics.no_vc_desc')}</p>
-          </div>
-          <div className="bg-[#2a2e35] p-5 rounded-lg border-l-4 border-red-500 hover:bg-[#323740] transition-colors duration-300">
-            <p className="text-white text-sm md:text-base font-medium">
-              <span className="text-red-500 font-bold mr-2">🛑</span> {t('tokenomics.no_founders')}
-            </p>
-            <p className="text-gray-400 text-xs md:text-sm mt-2 pl-7">{t('tokenomics.no_founders_desc')}</p>
-          </div>
-          <div className="bg-[#2a2e35] p-5 rounded-lg border-l-4 border-red-500 hover:bg-[#323740] transition-colors duration-300">
-            <p className="text-white text-sm md:text-base font-medium">
-              <span className="text-red-500 font-bold mr-2">🛑</span> {t('tokenomics.no_inflation')}
-            </p>
-            <p className="text-gray-400 text-xs md:text-sm mt-2 pl-7">{t('tokenomics.no_inflation_desc')}</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+            <div className="bg-[#1f2228] p-5 rounded-lg border-l-4 border-[#ffaac3] hover:bg-[#2a2e35] transition-colors duration-300 shadow-md hover:shadow-lg">
+              <div className="flex items-center">
+                <span className="text-[#ffaac3] font-bold mr-2.5 text-4xl leading-none flex-shrink-0 inline-flex items-center">•</span> 
+                <div className="flex flex-col">
+                  <p className="text-white text-sm md:text-base font-medium">{t('tokenomics.no_presale')}</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">{t('tokenomics.no_presale_desc')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-[#1f2228] p-5 rounded-lg border-l-4 border-[#ffaac3] hover:bg-[#2a2e35] transition-colors duration-300 shadow-md hover:shadow-lg">
+              <div className="flex items-center">
+                <span className="text-[#ffaac3] font-bold mr-2.5 text-4xl leading-none flex-shrink-0 inline-flex items-center">•</span> 
+                <div className="flex flex-col">
+                  <p className="text-white text-sm md:text-base font-medium">{t('tokenomics.no_vc')}</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">{t('tokenomics.no_vc_desc')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-[#1f2228] p-5 rounded-lg border-l-4 border-[#ffaac3] hover:bg-[#2a2e35] transition-colors duration-300 shadow-md hover:shadow-lg">
+              <div className="flex items-center">
+                <span className="text-[#ffaac3] font-bold mr-2.5 text-4xl leading-none flex-shrink-0 inline-flex items-center">•</span> 
+                <div className="flex flex-col">
+                  <p className="text-white text-sm md:text-base font-medium">{t('tokenomics.no_founders')}</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">{t('tokenomics.no_founders_desc')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-[#1f2228] p-5 rounded-lg border-l-4 border-[#ffaac3] hover:bg-[#2a2e35] transition-colors duration-300 shadow-md hover:shadow-lg">
+              <div className="flex items-center">
+                <span className="text-[#ffaac3] font-bold mr-2.5 text-4xl leading-none flex-shrink-0 inline-flex items-center">•</span> 
+                <div className="flex flex-col">
+                  <p className="text-white text-sm md:text-base font-medium">{t('tokenomics.no_inflation')}</p>
+                  <p className="text-gray-400 text-xs md:text-sm mt-2">{t('tokenomics.no_inflation_desc')}</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         

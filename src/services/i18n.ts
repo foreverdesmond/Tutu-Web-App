@@ -11,6 +11,11 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'tutu_description': 'A community-powered, super cute token project has officially landed on Linea Network!',
     'get_airdrop': 'Claim Airdrop',
     
+    // 页脚相关
+    'footer.all_rights_reserved': 'All rights reserved',
+    'footer.terms_of_use': 'Terms of Use',
+    'footer.privacy_policy': 'Privacy Policy',
+    
     // 钱包相关
     'wallet.connect': 'Connect Wallet',
     'wallet.connecting': 'Connecting...',
@@ -97,6 +102,11 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'tutu_description': '一个由 社区赋能、可爱爆棚 的代币项目正式登陆 Linea 网络！',
     'get_airdrop': '领取空投',
     
+    // 页脚相关
+    'footer.all_rights_reserved': '保留所有权利',
+    'footer.terms_of_use': '使用条款',
+    'footer.privacy_policy': '隐私政策',
+    
     // 钱包相关
     'wallet.connect': '连接钱包',
     'wallet.connecting': '连接中...',
@@ -182,6 +192,11 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'welcome_to_tutu': 'Tutu 세계에 오신 것을 환영합니다!',
     'tutu_description': '커뮤니티 기반의 아주 귀여운 토큰 프로젝트가 Linea 네트워크에 공식 출시되었습니다!',
     'get_airdrop': '에어드롭 받기',
+    
+    // 页脚相关
+    'footer.all_rights_reserved': '모든 권리 보유',
+    'footer.terms_of_use': '이용 약관',
+    'footer.privacy_policy': '개인정보 처리방침',
     
     // 钱包相关
     'wallet.connect': '지갑 연결',
