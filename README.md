@@ -28,13 +28,26 @@ Tutu Web App 是 TUTU 代币的官方 Web 应用，基于 Linea 区块链构建�
 
 ### ✨ Core Features | 核心特性
 
-- 🌍 **Multi-language Support | 多语言支持** - English, Simplified Chinese, Korean | 支持英文、简体中文、韩文三种语言
-- 🔗 **Web3 Wallet Integration | Web3 钱包集成** - Support for MetaMask and other EVM-compatible wallets | 支持 MetaMask 等多种 EVM 兼容钱包
-- 🎯 **Airdrop Functionality | 空投功能** - Convenient airdrop eligibility check and token claiming | 便捷的空投资格查询和代币领取
-- 📊 **Tokenomics | 代币经济学** - Interactive charts displaying token distribution | 交互式图表展示代币分配情况
-- 📱 **Responsive Design | 响应式设计** - Perfect adaptation for desktop and mobile devices | 完美适配桌面端和移动端
-- 🎨 **Modern UI Design | 现代 UI 设计** - Web3 aesthetic interface based on Ant Design | 基于 Ant Design 的 Web3 美学界面
-- ⚡ **High Performance | 高性能** - Server-side rendering based on Next.js 15 | 基于 Next.js 15 的服务端渲染
+- 🌍 **Multi-language Support | 多语言支持**
+- English, Simplified Chinese, Korean | 支持英文、简体中文、韩文三种语言
+
+- 🔗 **Web3 Wallet Integration | Web3 钱包集成**
+- Support for MetaMask and other EVM-compatible wallets | 支持 MetaMask 等多种 EVM 兼容钱包
+
+- 🎯 **Airdrop Functionality | 空投功能**
+- Convenient airdrop eligibility check and token claiming | 便捷的空投资格查询和代币领取
+
+- 📊 **Tokenomics | 代币经济学**
+- Interactive charts displaying token distribution | 交互式图表展示代币分配情况
+
+- 📱 **Responsive Design | 响应式设计**
+- Perfect adaptation for desktop and mobile devices | 完美适配桌面端和移动端
+
+- 🎨 **Modern UI Design | 现代 UI 设计**
+- Web3 aesthetic interface based on Ant Design | 基于 Ant Design 的 Web3 美学界面
+
+- ⚡ **High Performance | 高性能**
+- Server-side rendering based on Next.js 15 | 基于 Next.js 15 的服务端渲染
 
 ## 🛠 Tech Stack | 技术栈
 
@@ -174,37 +187,22 @@ tutu-web/
 
 ### 1. Token Information Display | 代币信息展示
 
-- Token basic information and introduction
-- Tokenomics data visualization
-- Real-time price and market data
-
-- 代币基本信息和介绍
-- 代币经济学数据可视化
-- 实时价格和市场数据
+- Token basic information and introduction | 代币基本信息和介绍
+- Tokenomics data visualization | 代币经济学数据可视化
 
 ### 2. Airdrop Functionality | 空投功能
 
-- Airdrop eligibility check
-- Claimable amount display
-- One-click token claiming
-- Transaction status tracking
-
-- 空投资格查询
-- 可领取数量显示
-- 一键领取代币
-- 交易状态跟踪
+- Airdrop eligibility check | 空投资格查询
+- Claimable amount display | 可领取数量显示
+- One-click token claiming | 一键领取代币
+- Transaction status tracking | 交易状态跟踪
 
 ### 3. Web3 Wallet Integration | Web3 钱包集成
 
-- Multi-wallet support (MetaMask, WalletConnect, etc.)
-- Wallet address display
-- Network switching prompts
-- Transaction signing handling
-
-- 多钱包支持（MetaMask、WalletConnect 等）
-- 钱包地址显示
-- 网络切换提示
-- 交易签名处理
+- Multi-wallet support (MetaMask, OKX Wallet, etc.) | OKX 钱包 等）
+- Wallet address display | 钱包地址显示
+- Network switching prompts | 网络切换提示
+- Transaction signing handling | 交易签名处理
 
 ### 4. Multi-language Support | 多语言支持
 
@@ -286,9 +284,9 @@ The application is deployed and accessible at the above URL. You can interact wi
 ## 📚 Related Resources | 相关资源
 
 - [Next.js Documentation | Next.js 文档](https://nextjs.org/docs) - Learn Next.js features and API | 学习 Next.js 特性和 API
-- [Ant Design Documentation | Ant Design 文档](https://ant.design/docs/react/introduce-cn) - UI component library documentation | UI 组件库文档
-- [Wagmi Documentation | Wagmi 文档](https://wagmi.sh/) - React Hooks for Ethereum
-- [Linea Documentation | Linea 文档](https://docs.linea.build/) - Linea blockchain documentation | Linea 区块链文档
+- [Ant Design Documentation | Ant Design 文档](https://web3.ant.design/guide/ant-design-web3) - UI component library documentation | UI 组件库文档
+- [Wagmi Documentation | Wagmi 文档](https://wagmi.sh/react/getting-started) - React Hooks for Ethereum
+- [Linea Documentation | Linea 文档](https://docs.linea.build/get-started) - Linea blockchain documentation | Linea 区块链文档
 
 ## 🤝 Contributing | 贡献指南
 
@@ -310,7 +308,7 @@ This project is open source under the MIT License - see the [LICENSE](LICENSE) f
 ## 📞 Contact Us | 联系我们
 
 - **Project Maintainer | 项目维护者**: Richmond522
-- **GitHub**: [https://github.com/Richmond522/tutu-web](https://github.com/Richmond522/tutu-web)
+- **GitHub**: [https://github.com/foreverdesmond/Tutu-Web-App](https://github.com/foreverdesmond/Tutu-Web-App)
 - **Live Site | 在线网站**: [https://tututoken.cc](https://tututoken.cc)
 
 ---
