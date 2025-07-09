@@ -98,7 +98,7 @@ const translations: Record<string, Record<TranslationKey, string>> = {
     'common.airdrop': '空投',
     
     // Banner文字
-    'welcome_to_tutu': '欢迎来到 Tutu 的世界！',
+    'welcome_to_tutu': '欢迎来到 Linea-Tutu 的世界！',
     'tutu_description': '一个由 社区赋能、可爱爆棚 的代币项目正式登陆 Linea 网络！',
     'get_airdrop': '领取空投',
     
