@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     "rc-pagination",
     "rc-picker",
   ],
-  output: 'export',
+  output: 'standalone',
   /* config options here */
 };
 
