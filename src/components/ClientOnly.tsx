@@ -8,7 +8,7 @@ interface ClientOnlyProps {
 }
 
 /**
- * 仅在客户端渲染的组件包装器
+ * 仅在客户端渲染时使用的组件包装器
  * 用于包装使用客户端功能（如window对象、localStorage等）的组件
  */
 export default function ClientOnly({ children, fallback = null }: ClientOnlyProps) {
