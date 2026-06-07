@@ -13,7 +13,7 @@ export default function LanguageSwitch() {
   // 语言选项配置
   const languages = [
     { key: 'en', label: 'English' },
-    { key: 'zh-CN', label: '中文' },
+    { key: 'zh-CN', label: '简体中文' },
     { key: 'ko', label: '한국어' }
   ];
   
