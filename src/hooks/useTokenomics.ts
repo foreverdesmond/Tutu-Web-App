@@ -21,7 +21,7 @@ export const useTokenomics = () => {
           {
             label: 'Airdrop',
             value: 100,
-            color: '#ffaac3', // 主题粉色
+            color: '#ffaac2', // 主题粉色
           },
           {
             label: 'Team',
