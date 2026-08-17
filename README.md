@@ -1,18 +1,27 @@
 # Tutu Web App 🐻
 
-**TUTU Token Official Web Application | TUTU 代币官方 Web 应用**
+<div align="center">
+  <img src="public/images/logo.png" alt="Tutu Logo" width="120" height="120" />
+
+  **TUTU Token Official Web Application | TUTU 代币官方 Web 应用**
+
+  An ERC20 token interaction platform based on Linea blockchain, providing token information display and airdrop claiming functionality
+
+  基于 Linea 区块链的 ERC20 代币交互平台，提供代币信息展示和空投领取功能
+
+  🌐 **Live Demo | 在线演示**: [https://tututoken.cc](https://tututoken.cc)
+
+  [![X (Twitter)](https://img.shields.io/badge/X-@Richyisaflower-black?logo=x)](https://x.com/Richyisaflower)
+  [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+  [![Next.js](https://img.shields.io/badge/Next.js-15.3.1-black)](https://nextjs.org/)
+  [![React](https://img.shields.io/badge/React-19.0.0-blue)](https://reactjs.org/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+  [![Ant Design](https://img.shields.io/badge/Ant%20Design-5.24.7-1890ff)](https://ant.design/)
+</div>
 
 <p align="center">
   <a href="#简体中文">简体中文</a> · <a href="#english">English</a>
 </p>
-
-<div align="center">
-  <img src="public/images/logo.png" alt="Tutu Logo" width="120" height="120" />
-  <br/>
-  🌐 **Live Demo | 在线演示**: [https://tututoken.cc](https://tututoken.cc)
-  <br/>
-  [![X (Twitter)](https://img.shields.io/badge/X-@Richyisaflower-black?logo=x)](https://x.com/Richyisaflower)
-</div>
 
 ---
 
